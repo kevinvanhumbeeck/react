@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
+
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
+    font: 20px "Genos", Futura, sans-serif;
     margin: 20px;
+    background-color: #131516;
+    color: #ddd;
   }
   
   ol, ul {
@@ -18,8 +22,9 @@ body {
   }
   
   .square {
-    background: #fff;
-    border: 1px solid #999;
+    background: #111;
+    color: #ddd;
+    border: 1px solid #333;
     float: left;
     font-size: 24px;
     font-weight: bold;
