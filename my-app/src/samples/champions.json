@@ -1,0 +1,84 @@
+[
+    {
+        "name": "Raglin",
+        "type": "Support",
+        "faction": "Banner Lords",
+        "element": "Void",
+        "rarity": "Legendary",
+        "aura": {
+            "def": 0.33,
+            "scope": "*"
+        },
+        "stats": {
+            "level": 60,
+            "stars": 6,
+            "ascend": 6,
+            "hp": 20310,
+            "atk": 1156,
+            "def": 1068,
+            "spd": 104,
+            "cRate": 15,
+            "cDmg": 50,
+            "res": 50,
+            "acc": 0
+        },
+        "skills": [
+            {
+                "name": "Repent",
+                "mod": 1.6,
+                "type": "atk"
+            },
+            {
+                "name": "Mercy",
+                "mod": 4,
+                "type": "atk"
+            },
+            {
+                "name": "Miracle",
+                "mod": 0.75,
+                "type": "allyHp"
+            }
+        ]
+    },
+    {
+        "name": "Visix the Unbowed",
+        "type": "Defence",
+        "faction": "Dark Elves",
+        "element": "Void",
+        "rarity": "Legendary",
+        "aura": {
+            "def": 0.37,
+            "scope": "crypts"
+        },
+        "stats": {
+            "level": 60,
+            "stars": 6,
+            "ascend": 6,
+            "hp": 20310,
+            "atk": 1156,
+            "def": 1068,
+            "spd": 104,
+            "cRate": 15,
+            "cDmg": 50,
+            "res": 50,
+            "acc": 0
+        },
+        "skills": [
+            {
+                "name": "Flanged Mace",
+                "mod": 1.6,
+                "type": "def"
+            },
+            {
+                "name": "Sinister Allies",
+                "mod": 3.5,
+                "type": "def"
+            },
+            {
+                "name": "Single Combat",
+                "mod": 4.1,
+                "type": "def"
+            }
+        ]
+    }
+]

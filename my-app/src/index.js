@@ -7,6 +7,26 @@ import logoO from './logo192-O.png';
 const X = <img src={logoX} alt="X" width="24" height="24" />
 const O = <img src={logoO} alt="O" width="24" height="24" />
 
+const champions = require("./samples/champions.json");
+
+console.log(champions[0]);
+
+class Champ extends React.Component {
+    constructor(props) {
+        super(props);
+        this.stats = champions[props.id];
+    }
+
+    render() {
+        return (
+            <div className="champ">
+                <div className="name">Name:</div>
+                <div className="value">{this.stats.name}</div>
+            </div>
+        );
+    }
+}
+
 function Square(props) {
     return (
         <button className="square" onClick={props.onClick}>
@@ -86,7 +106,7 @@ class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{/* status */}</div>
-                    <ol>{/* TODO */}</ol>
+                    <ol><Champ id="0" /></ol>
                 </div>
             </div>
         );

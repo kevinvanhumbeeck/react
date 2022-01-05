@@ -40,6 +40,10 @@ body {
   .square:focus {
     outline: none;
   }
+
+  .square:hover {
+    cursor: pointer;
+  }
   
   .kbd-navigation .square:focus {
     background: #ddd;
@@ -54,3 +58,21 @@ body {
     margin-left: 20px;
   }
   
+  .champ {
+    width: 300px;
+    border: 1px solid #333;
+    overflow: hidden
+  }
+
+  .champ .name {
+      /* width: 300px; */
+      float: left;
+      /* border: 1px solid red; */
+      padding: 2px 4px;
+  }
+
+  .champ .value {
+      /* border: 1px solid green; */
+      overflow: hidden;
+      padding: 2px 4px;
+  }
