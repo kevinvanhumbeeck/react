@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import logoX from './logo192-X.png';
+import logoO from './logo192-O.png';
+
+const X = <img src={logoX} alt="X" width="24" height="24" />
+const O = <img src={logoO} alt="O" width="24" height="24" />
 
 function Square(props) {
     return (
@@ -30,7 +35,7 @@ class Board extends React.Component {
 
     handleClick(i) {
         const squares = this.state.squares.slice();
-        squares[i] = this.state.xIsNext ? 'X' : 'O';
+        squares[i] = this.state.xIsNext ? X : O;
         this.setState({
             squares: squares,
             xIsNext: !this.state.xIsNext,
