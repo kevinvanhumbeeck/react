@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "Raglin",
         "type": "Support",
         "faction": "Banner Lords",
@@ -41,6 +42,7 @@
         ]
     },
     {
+        "id": 2,
         "name": "Visix the Unbowed",
         "type": "Defence",
         "faction": "Dark Elves",

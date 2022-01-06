@@ -33,6 +33,10 @@ class Board extends React.Component {
         });
     }
 
+    reClick() {
+        document.getElementById("Layer_2_1_").setAttribute("fill", "red")
+    }
+
     render() {
         const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 

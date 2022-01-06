@@ -1,21 +1,30 @@
-import React from 'react';
-
-const champions = require("./samples/champions.json");
-
-class Champ extends React.Component {
-    constructor(props) {
-        super(props);
-        this.stats = champions[props.id];
-    }
-
-    render() {
-        return (
-            <div className="champ">
-                <div className="name">Name:</div>
-                <div className="value">{this.stats.name}</div>
+const Champ = ({ champ, onDelete, onShow }) => {
+    return (
+        <div className="champ">
+            <div className="name">Name:</div>
+            <div className="value">{champ.name}</div>
+            <div
+                className="value"
+                onClick={() => onDelete(champ.id)}
+                style={{
+                    cursor: 'pointer',
+                    color: 'red'
+                }}
+            >
+                X
             </div>
-        );
-    }
+            <div
+                className="value"
+                onClick={() => onShow(champ.id)}
+                style={{
+                    cursor: 'pointer',
+                    color: 'green'
+                }}
+            >
+                {champ.reminder} 0
+            </div>
+        </div>
+    )
 }
 
 export default Champ

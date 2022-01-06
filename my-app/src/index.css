@@ -73,6 +73,7 @@ body {
 
   .champ .value {
       /* border: 1px solid green; */
+      float: left;
       overflow: hidden;
       padding: 2px 4px;
   }
