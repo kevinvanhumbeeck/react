@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import Board from "./Board";
 import Champs from "./Champs";
@@ -25,6 +24,8 @@ class Game extends React.Component {
     });
   };
 
+  log() {}
+
   render() {
     return (
       <div className="game">
@@ -32,11 +33,7 @@ class Game extends React.Component {
           <Board />
         </div>
         <div className="game-info">
-          <div>
-            <a href="#" className="neon-button">
-              Neon
-            </a>
-          </div>
+          <div>{/* status */}</div>
           <div>
             <Champs
               champs={this.state.champs}

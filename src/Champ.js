@@ -1,27 +1,22 @@
 const Champ = ({ champ, onDelete, onShow }) => {
+  const cls = `value btn${champ.reminder ? " on" : ""}`;
+
   return (
     <div className="champ">
-      <div className="name">Name:</div>
-      <div className="value">{champ.name}</div>
+      <div className="name">{champ.name}</div>
       <button
-        className="value"
+        className="value btn"
         onClick={() => onDelete(champ.id)}
-        style={{
-          cursor: "pointer",
-          color: "red",
-        }}
+        style={{ cursor: "pointer" }}
       >
         X
       </button>
       <button
-        className="value"
+        className={cls}
         onClick={() => onShow(champ.id)}
-        style={{
-          cursor: "pointer",
-          color: "green",
-        }}
+        style={{ cursor: "pointer" }}
       >
-        {champ.reminder} 0
+        {champ.reminder ? "On" : "Off"}
       </button>
     </div>
   );

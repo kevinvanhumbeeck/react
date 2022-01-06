@@ -1,79 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Genos&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Genos&display=swap");
 
 body {
-    font: 20px "Genos", Futura, sans-serif;
-    margin: 20px;
-    background-color: #131516;
-    color: #ddd;
-  }
-  
-  ol, ul {
-    padding-left: 30px;
-  }
-  
-  .board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-  
-  .status {
-    margin-bottom: 10px;
-  }
-  
-  .square {
-    background: #111;
-    color: #ddd;
-    border: 1px solid #333;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 3px;
-    text-align: center;
-    width: 34px;
-  }
-  
-  .square:focus {
-    outline: none;
-  }
+  font: 20px "Genos", Futura, sans-serif;
+  margin: 20px;
+  background-color: #131516;
+  color: #ddd;
+}
 
-  .square:hover {
-    cursor: pointer;
-  }
-  
-  .kbd-navigation .square:focus {
-    background: #ddd;
-  }
-  
-  .game {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .game-info {
-    margin-left: 20px;
-  }
-  
-  .champ {
-    width: 300px;
-    border: 1px solid #333;
-    overflow: hidden
-  }
+ol,
+ul {
+  padding-left: 30px;
+}
 
-  .champ .name {
-      /* width: 300px; */
-      float: left;
-      /* border: 1px solid red; */
-      padding: 2px 4px;
-  }
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
 
-  .champ .value {
-      /* border: 1px solid green; */
-      float: left;
-      overflow: hidden;
-      padding: 2px 4px;
-  }
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #111;
+  color: #ddd;
+  border: 1px solid #333;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 3px;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.square:hover {
+  cursor: pointer;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.champ {
+  width: 300px;
+  /* border: 1px solid #333; */
+  overflow: hidden;
+}
+
+.champ .name {
+  /* width: 300px; */
+  float: left;
+  /* border: 1px solid red; */
+  padding: 2px 4px;
+}
+
+.champ .value {
+  /* border: 1px solid green; */
+  float: right;
+  overflow: hidden;
+  padding: 2px 4px;
+}
+
+.btn {
+  min-width: 60px;
+  margin: 5px 10px 0px;
+  padding: 7.5px 30px 7.5px 30px;
+  font-size: 0.7em;
+  border: 1px solid hsl(317 100% 54%);
+  border-radius: 20px;
+  color: #fff;
+  outline: 0;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.on {
+  background-color: hsl(317 100% 54%);
+}
