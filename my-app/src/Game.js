@@ -1,12 +1,12 @@
-import React from 'react';
-import Board from './Board';
-import Champs from './Champs';
+import React from "react";
+import Board from "./Board";
+import Champs from "./Champs";
 
 class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      champs: require('./Champs-sample.json'),
+      champs: require("./Champs-sample.json"),
     };
   }
 
@@ -19,8 +19,7 @@ class Game extends React.Component {
   showState = (id) => {
     this.setState({
       champs: this.state.champs.map((champ) =>
-                champ.id === id ?
-                    {...champ, reminder: !champ.reminder} :champ,
+        champ.id === id ? { ...champ, reminder: !champ.reminder } : champ
       ),
     });
 
@@ -42,7 +41,9 @@ class Game extends React.Component {
                 onDelete={this.deleteChamp}
                 onShow={this.showState}
               />
-          ) : 'No champs'}
+            ) : (
+              "No champs"
+            )}
           </div>
         </div>
       </div>

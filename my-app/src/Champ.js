@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Champ = ({ champ, onDelete, onShow }) => {
   return (
     <div className="champ">
@@ -7,18 +9,18 @@ const Champ = ({ champ, onDelete, onShow }) => {
         className="value"
         onClick={() => onDelete(champ.id)}
         style={{
-          cursor: 'pointer',
-          color: 'red',
+          cursor: "pointer",
+          color: "red",
         }}
       >
-                X
+        X
       </div>
       <div
         className="value"
         onClick={() => onShow(champ.id)}
         style={{
-          cursor: 'pointer',
-          color: 'green',
+          cursor: "pointer",
+          color: "green",
         }}
       >
         {champ.reminder} 0
