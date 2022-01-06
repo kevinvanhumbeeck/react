@@ -22,8 +22,6 @@ class Game extends React.Component {
         champ.id === id ? { ...champ, reminder: !champ.reminder } : champ
       ),
     });
-
-    console.log(this.state);
   };
 
   render() {
