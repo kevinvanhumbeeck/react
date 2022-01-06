@@ -1,11 +1,9 @@
-import React from 'react';
-
 const Champ = ({ champ, onDelete, onShow }) => {
   return (
     <div className="champ">
       <div className="name">Name:</div>
       <div className="value">{champ.name}</div>
-      <div
+      <button
         className="value"
         onClick={() => onDelete(champ.id)}
         style={{
@@ -14,8 +12,8 @@ const Champ = ({ champ, onDelete, onShow }) => {
         }}
       >
         X
-      </div>
-      <div
+      </button>
+      <button
         className="value"
         onClick={() => onShow(champ.id)}
         style={{
@@ -24,7 +22,7 @@ const Champ = ({ champ, onDelete, onShow }) => {
         }}
       >
         {champ.reminder} 0
-      </div>
+      </button>
     </div>
   );
 };
