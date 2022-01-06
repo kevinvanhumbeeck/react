@@ -35,15 +35,11 @@ class Game extends React.Component {
         <div className="game-info">
           <div>{/* status */}</div>
           <div>
-            {this.state.champs.length > 0 ? (
-              <Champs
-                champs={this.state.champs}
-                onDelete={this.deleteChamp}
-                onShow={this.showState}
-              />
-            ) : (
-              "No champs"
-            )}
+            <Champs
+              champs={this.state.champs}
+              onDelete={this.deleteChamp}
+              onShow={this.showState}
+            />
           </div>
         </div>
       </div>
