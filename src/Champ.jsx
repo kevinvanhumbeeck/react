@@ -1,6 +1,4 @@
 const Champ = ({ champ, onDelete, onToggle }) => {
-  const cls = `value btn${champ.flag ? " on" : ""}`;
-
   return (
     <div className="champ">
       <div className="name">{champ.name}</div>
@@ -12,7 +10,7 @@ const Champ = ({ champ, onDelete, onToggle }) => {
         X
       </button>
       <button
-        className={cls}
+        className={`value btn ${champ.flag ? "on" : ""}`}
         onClick={() => onToggle(champ.id)}
         style={{ cursor: "pointer" }}
       >
