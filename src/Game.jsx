@@ -1,14 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Board from "./Board";
 import Quote from "./Quote";
 import Champs from "./Champs";
 import AddChamp from "./AddChamp";
 
 const Game = () => {
-  const [champs, setChamps] = useState(require("./Champs-sample.json"));
+  const [champs, setChamps] = useState([]);
 
-  const deleteChamp = (id) => {
-    setChamps(champs.filter((champ) => champ.id !== id));
+  useEffect(() => {
+    const getChamps = async () => {
+      const champsFromServer = await fetchChamps();
+      setChamps(champsFromServer);
+    };
+
+    getChamps();
+  }, []);
+
+  const fetchChamps = async () => {
+    const res = await fetch("/champs");
+    const data = await res.json();
+
+    return data;
+  };
+
+  const deleteChamp = async (id) => {
+    const res = await fetch(`/champs/${id}`, {
+      method: "DELETE",
+    });
+
+    res.status === 200
+      ? setChamps(champs.filter((champ) => champ.id !== id))
+      : alert("Error Deleting This Task");
   };
 
   const toggleChamp = (id) => {
@@ -19,8 +41,18 @@ const Game = () => {
     );
   };
 
-  const addChamp = (champ) => {
-    setChamps([...champs, champ]);
+  const addChamp = async (champ) => {
+    const res = await fetch("/champs", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(champ),
+    });
+
+    const data = await res.json();
+
+    setChamps([...champs, data]);
   };
 
   return (
