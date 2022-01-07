@@ -1,53 +1,48 @@
-import React from "react";
+import { useState } from "react";
 import Board from "./Board";
 import Quote from "./Quote";
 import Champs from "./Champs";
+import AddChamp from "./AddChamp";
 
-class Game extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      champs: require("./Champs-sample.json"),
-    };
-  }
+const Game = () => {
+  const [champs, setChamps] = useState(require("./Champs-sample.json"));
 
-  deleteChamp = (id) => {
-    this.setState({
-      champs: this.state.champs.filter((champ) => champ.id !== id),
-    });
+  const deleteChamp = (id) => {
+    setChamps(champs.filter((champ) => champ.id !== id));
   };
 
-  toggleChamp = (id) => {
-    this.setState({
-      champs: this.state.champs.map((champ) =>
+  const toggleChamp = (id) => {
+    setChamps(
+      champs.map((champ) =>
         champ.id === id ? { ...champ, flag: !champ.flag } : champ
-      ),
-    });
+      )
+    );
   };
 
-  log() {}
+  const addChamp = (champ) => {
+    setChamps([...champs, champ]);
+  };
 
-  render() {
-    return (
-      <div className="game">
-        <div className="game-board">
-          <Board />
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board />
+      </div>
+      <div className="game-info">
+        <div>
+          <Quote />
         </div>
-        <div className="game-info">
-          <div>
-            <Quote />
-          </div>
-          <div>
-            <Champs
-              champs={this.state.champs}
-              onDelete={this.deleteChamp}
-              onToggle={this.toggleChamp}
-            />
-          </div>
+        <div>
+          <Champs
+            champs={champs}
+            onDelete={deleteChamp}
+            onToggle={toggleChamp}
+          />
+          <AddChamp onAdd={addChamp} />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Game;
