@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./AddChamp.css";
 
 const AddChamp = ({ onAdd }) => {
   const [name, setName] = useState("");
