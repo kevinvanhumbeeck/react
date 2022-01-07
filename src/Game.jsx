@@ -1,5 +1,6 @@
 import React from "react";
 import Board from "./Board";
+import Quote from "./Quote";
 import Champs from "./Champs";
 
 class Game extends React.Component {
@@ -16,10 +17,10 @@ class Game extends React.Component {
     });
   };
 
-  showState = (id) => {
+  toggleChamp = (id) => {
     this.setState({
       champs: this.state.champs.map((champ) =>
-        champ.id === id ? { ...champ, reminder: !champ.reminder } : champ
+        champ.id === id ? { ...champ, flag: !champ.flag } : champ
       ),
     });
   };
@@ -33,12 +34,14 @@ class Game extends React.Component {
           <Board />
         </div>
         <div className="game-info">
-          <div>{/* status */}</div>
+          <div>
+            <Quote />
+          </div>
           <div>
             <Champs
               champs={this.state.champs}
               onDelete={this.deleteChamp}
-              onShow={this.showState}
+              onToggle={this.toggleChamp}
             />
           </div>
         </div>

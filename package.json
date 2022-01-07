@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -35,11 +36,19 @@
     "settings": {
       "react": {
         "version": "detect"
+      },
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
       }
     },
     "rules": {
       "react/prop-types": 0,
-      "indent": ["error", 2],
+      "indent": [
+        "error",
+        2
+      ],
       "linebreak-style": 1,
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off"

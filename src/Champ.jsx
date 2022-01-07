@@ -1,5 +1,5 @@
-const Champ = ({ champ, onDelete, onShow }) => {
-  const cls = `value btn${champ.reminder ? " on" : ""}`;
+const Champ = ({ champ, onDelete, onToggle }) => {
+  const cls = `value btn${champ.flag ? " on" : ""}`;
 
   return (
     <div className="champ">
@@ -13,10 +13,10 @@ const Champ = ({ champ, onDelete, onShow }) => {
       </button>
       <button
         className={cls}
-        onClick={() => onShow(champ.id)}
+        onClick={() => onToggle(champ.id)}
         style={{ cursor: "pointer" }}
       >
-        {champ.reminder ? "On" : "Off"}
+        {champ.flag ? "On" : "Off"}
       </button>
     </div>
   );

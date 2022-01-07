@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Champ from "./Champ";
 
-const Champs = ({ champs, onDelete, onShow }) => {
+const Champs = ({ champs, onDelete, onToggle }) => {
   const count = champs.length;
   return (
     <>
@@ -13,7 +13,7 @@ const Champs = ({ champs, onDelete, onShow }) => {
           key={champ.id}
           champ={champ}
           onDelete={onDelete}
-          onShow={onShow}
+          onToggle={onToggle}
         />
       ))}
     </>
