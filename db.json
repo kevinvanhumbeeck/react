@@ -83,6 +83,18 @@
           "type": "allyHp"
         }
       ]
+    },
+    {
+      "name": "gg",
+      "type": "",
+      "flag": false,
+      "id": 4
+    },
+    {
+      "name": "Jasmien",
+      "type": "Defense",
+      "flag": true,
+      "id": 5
     }
   ]
 }

@@ -56,21 +56,23 @@ const Game = () => {
   };
 
   return (
-    <div className="game">
-      <div className="game-board">
-        <Board />
-      </div>
-      <div className="game-info">
-        <div>
-          <Quote />
+    <div className="w-screen min-h-screen bg-zinc-800">
+      <div className="flex flex-row w-960">
+        <div className="basis-1/4">
+          <Board />
         </div>
-        <div>
-          <Champs
-            champs={champs}
-            onDelete={deleteChamp}
-            onToggle={toggleChamp}
-          />
-          <AddChamp onAdd={addChamp} />
+        <div className="basis-3/4">
+          <div>
+            <Quote />
+          </div>
+          <div>
+            <Champs
+              champs={champs}
+              onDelete={deleteChamp}
+              onToggle={toggleChamp}
+            />
+            <AddChamp onAdd={addChamp} />
+          </div>
         </div>
       </div>
     </div>
