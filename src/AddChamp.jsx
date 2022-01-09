@@ -21,42 +21,29 @@ const AddChamp = ({ onAdd }) => {
   };
 
   return (
-    <form className="add-form" onSubmit={onSubmit}>
-      <div className="form-control">
-        <label>
-          Name
-          <input
-            type="text"
-            placeholder="Add Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-      </div>
-      <div className="form-control">
-        <label>
-          Type
-          <input
-            type="text"
-            placeholder="Add Type"
-            value={type}
-            onChange={(e) => setType(e.target.value)}
-          />
-        </label>
-      </div>
-      <div className="form-control form-control-check">
-        <label>
-          Active
-          <input
-            type="checkbox"
-            checked={flag}
-            value={flag}
-            onChange={(e) => setFlag(e.currentTarget.checked)}
-          />
-        </label>
-      </div>
+    <form onSubmit={onSubmit}>
+      <input
+        type="text"
+        placeholder="Add Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
 
-      <input type="submit" value="Save Task" className="btn btn-block" />
+      <input
+        type="text"
+        placeholder="Add Type"
+        value={type}
+        onChange={(e) => setType(e.target.value)}
+      />
+
+      <input
+        type="checkbox"
+        checked={flag}
+        value={flag}
+        onChange={(e) => setFlag(e.currentTarget.checked)}
+      />
+
+      <input type="submit" value="Save Champ" className="btn btn-block" />
     </form>
   );
 };

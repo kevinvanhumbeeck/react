@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Board from "./Board";
 import Quote from "./Quote";
 import Champs from "./Champs";
-import AddChamp from "./AddChamp";
 
 const Game = () => {
   const [champs, setChamps] = useState([]);
@@ -34,6 +33,7 @@ const Game = () => {
   };
 
   const toggleChamp = (id) => {
+    // TODO JSON-SERVER
     setChamps(
       champs.map((champ) =>
         champ.id === id ? { ...champ, flag: !champ.flag } : champ
@@ -70,8 +70,8 @@ const Game = () => {
               champs={champs}
               onDelete={deleteChamp}
               onToggle={toggleChamp}
+              onAdd={addChamp}
             />
-            <AddChamp onAdd={addChamp} />
           </div>
         </div>
       </div>

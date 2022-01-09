@@ -85,16 +85,22 @@
       ]
     },
     {
-      "name": "gg",
-      "type": "",
-      "flag": false,
+      "name": "Kevin",
+      "type": "Defense",
+      "flag": true,
       "id": 4
     },
     {
       "name": "Jasmien",
-      "type": "Defense",
+      "type": "Support",
       "flag": true,
       "id": 5
+    },
+    {
+      "name": "Dreirrie",
+      "type": "HP",
+      "flag": false,
+      "id": 6
     }
   ]
 }
