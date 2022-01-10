@@ -15,14 +15,14 @@ const Game = () => {
     getChamps();
   }, []);
 
-  const fetchChamps = async (ids = null) => {
+  const fetchChamps = async (ids = []) => {
     const path = "/champs";
     let url = path;
 
-    if (ids && ids.length === 1) {
+    if (ids.length === 1) {
       url = `${path}/${ids[0]}`;
-    } else if (ids && ids.length > 1) {
-      url = `${path}?id=${"&id="}`;
+    } else if (ids.length > 1) {
+      url = `${path}?id=${ids.join("&id=")}`;
     }
 
     const res = await fetch(url);

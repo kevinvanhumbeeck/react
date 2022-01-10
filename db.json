@@ -82,7 +82,8 @@
           "mod": 0.75,
           "type": "allyHp"
         }
-      ]
+      ],
+      "flag": true
     },
     {
       "name": "Kevin",
