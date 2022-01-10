@@ -1,24 +1,24 @@
 const Champ = ({ champ, onDelete, onToggle }) => {
   return (
     <tr className="border-b border-gray-400/10">
-      <td className="py-3 px-6 text-left font-medium">{champ.name}</td>
-      <td className="py-3 px-6 text-left">{champ.type}</td>
-      <td className="py-3 px-6 text-center">
+      <td className="py-2 px-6 text-left font-medium">{champ.name}</td>
+      <td className="py-2 px-6 text-left">{champ.type}</td>
+      <td className="py-2 px-6 text-center">
         <span
           className={`${
             champ.flag
-              ? "bg-purple-200  text-purple-600"
-              : "bg-red-200  text-red-600"
-          } py-1 px-3 rounded-full text-xs capitalize`}
+              ? "bg-sky-200  text-sky-600"
+              : "bg-pink-200  text-pink-600"
+          } py-1/2 px-2 rounded-full text-xs capitalize`}
         >
           {champ.flag ? "active" : "idle"}
         </span>
       </td>
-      <td className="py-3 px-6 text-center">
+      <td className="py-2 px-6">
         <button
-          className={`cursor-pointer ${
-            champ.flag && "on"
-          } w-4 mr-2 transform hover:text-purple-500 hover:scale-110`}
+          className={`align-middle cursor-pointer ${
+            !champ.flag && "text-pink-400"
+          } w-4 mr-2 transform hover:text-sky-400 hover:scale-110`}
           onClick={() => onToggle(champ.id)}
         >
           <svg
@@ -41,7 +41,7 @@ const Champ = ({ champ, onDelete, onToggle }) => {
             />
           </svg>
         </button>
-        <button className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+        <button className="align-middle w-4 mr-2 transform hover:text-sky-400 hover:scale-110">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -57,7 +57,7 @@ const Champ = ({ champ, onDelete, onToggle }) => {
           </svg>
         </button>
         <button
-          className="cursor-pointer w-4 mr-2 transform hover:text-purple-500 hover:scale-110"
+          className="align-middle cursor-pointer w-4 mr-2 transform hover:text-sky-400 hover:scale-110"
           onClick={() => onDelete(champ.id)}
         >
           <svg

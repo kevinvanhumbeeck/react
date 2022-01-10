@@ -40,7 +40,8 @@
           "mod": 0.75,
           "type": "allyHp"
         }
-      ]
+      ],
+      "flag": false
     },
     {
       "id": 3,
@@ -83,13 +84,19 @@
           "type": "allyHp"
         }
       ],
-      "flag": true
+      "flag": false
     },
     {
       "name": "Jasmien",
       "type": "Support",
       "flag": true,
       "id": 5
+    },
+    {
+      "name": "Kevin",
+      "type": "Attack",
+      "flag": true,
+      "id": 6
     }
   ]
 }

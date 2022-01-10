@@ -6,17 +6,17 @@ const Champs = ({ champs, onDelete, onToggle, onAdd }) => {
     <>
       <table className="border-collapse">
         <thead>
-          <tr className="border-b border-gray-400/10 text-gray-300">
-            <th className="sticky py-3 px-6 text-left">
+          <tr className="border-b border-gray-400/10 text-sky-400">
+            <th className="sticky py-2 px-6 text-left">
               {champs.length > 0 ? champs.length : "No"} Champion
               {champs.length !== 1 ? "s" : ""}
             </th>
-            <th className="sticky py-3 px-6 text-left">Type</th>
-            <th className="sticky py-3 px-6 text-center">Status</th>
-            <th className="sticky py-3 px-6 text-center">Actions</th>
+            <th className="sticky py-2 px-6 text-left">Type</th>
+            <th className="sticky py-2 px-6 text-center">Status</th>
+            <th className="sticky py-2 px-6 text-center">Actions</th>
           </tr>
         </thead>
-        <tbody className="text-gray-400 font-light">
+        <tbody className="text-gray-300 font-medium">
           {champs.map((champ) => (
             <Champ
               key={champ.id}

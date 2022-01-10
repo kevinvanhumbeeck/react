@@ -1,5 +1,4 @@
 import useFetch from "./useFetch";
-import "./Quote.css";
 
 const Quote = () => {
   const {
