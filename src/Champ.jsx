@@ -79,4 +79,4 @@ const Champ = ({ champ, onDelete, onToggle }) => {
   );
 };
 
-export default Champ;
+export default Champ

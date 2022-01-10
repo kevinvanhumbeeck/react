@@ -1,10 +1,10 @@
-import React from "react";
-import Square from "./Square";
-import logoX from "./images/logo192-X.png";
-import logoO from "./images/logo192-O.png";
+import React from 'react'
+import Square from './Square'
+import logoX from './images/logo192-X.png'
+import logoO from './images/logo192-O.png'
 
-const X = <img src={logoX} alt="X" width="24" height="24" />;
-const O = <img src={logoO} alt="O" width="24" height="24" />;
+const X = <img src={logoX} alt="X" width="24" height="24" />
+const O = <img src={logoO} alt="O" width="24" height="24" />
 
 class Board extends React.Component {
   constructor(props) {
@@ -34,11 +34,11 @@ class Board extends React.Component {
   }
 
   reClick() {
-    document.getElementById("Layer_2_1_").setAttribute("fill", "red");
+    document.getElementById('Layer_2_1_').setAttribute('fill', 'red');
   }
 
   render() {
-    const status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 
     return (
       <div>
@@ -72,4 +72,4 @@ class Board extends React.Component {
   }
 }
 
-export default Board;
+export default Board

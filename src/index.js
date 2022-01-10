@@ -1,7 +1,7 @@
-import ReactDOM from "react-dom";
-import Game from "./Game";
-import "./index.css";
+import ReactDOM from 'react-dom'
+import Game from './Game'
+import './index.css'
 
 // ========================================
 
-ReactDOM.render(<Game />, document.getElementById("root"));
+ReactDOM.render(<Game />, document.getElementById('root'))

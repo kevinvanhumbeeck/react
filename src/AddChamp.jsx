@@ -1,22 +1,22 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const AddChamp = ({ onAdd }) => {
-  const [name, setName] = useState("");
-  const [type, setType] = useState("");
+  const [name, setName] = useState('');
+  const [type, setType] = useState('');
   const [flag, setFlag] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     if (!name) {
-      alert("Please add a task");
+      alert('Please add a task');
       return;
     }
 
     onAdd({ name, type, flag });
 
-    setName("");
-    setType("");
+    setName('');
+    setType('');
     setFlag(false);
   };
 
@@ -48,4 +48,4 @@ const AddChamp = ({ onAdd }) => {
   );
 };
 
-export default AddChamp;
+export default AddChamp

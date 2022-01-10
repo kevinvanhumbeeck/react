@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import Board from "./Board";
-import Quote from "./Quote";
-import Champs from "./Champs";
+import { useState, useEffect } from 'react'
+import Board from './Board'
+import Quote from './Quote'
+import Champs from './Champs'
 
 const Game = () => {
   const [champs, setChamps] = useState([]);
+  const headers = { 'Content-type': 'application/json' };
 
   useEffect(() => {
     const getChamps = async () => {
@@ -16,13 +17,13 @@ const Game = () => {
   }, []);
 
   const fetchChamps = async (ids = []) => {
-    const path = "/champs";
+    const path = '/champs';
     let url = path;
 
     if (ids.length === 1) {
       url = `${path}/${ids[0]}`;
     } else if (ids.length > 1) {
-      url = `${path}?id=${ids.join("&id=")}`;
+      url = `${path}?id=${ids.join('&id=')}`;
     }
 
     const res = await fetch(url);
@@ -33,36 +34,32 @@ const Game = () => {
 
   const deleteChamp = async (id) => {
     const res = await fetch(`/champs/${id}`, {
-      method: "DELETE",
+      method: 'DELETE',
     });
 
     res.status === 200
       ? setChamps(champs.filter((champ) => champ.id !== id))
-      : alert("Error Deleting This Champ");
+      : alert('Error Deleting This Champ');
   };
 
   const toggleChamp = async (id) => {
     const champ = await fetchChamps([id]);
     const updChamp = { ...champ, flag: !champ.flag };
     const res = await fetch(`/champs/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
+      method: 'PUT',
+      headers,
       body: JSON.stringify(updChamp),
     });
 
     res.status === 200
       ? setChamps(champs.map((champ) => (champ.id === id ? updChamp : champ)))
-      : alert("Error Updating This Champ");
+      : alert('Error Updating This Champ');
   };
 
   const addChamp = async (champ) => {
-    const res = await fetch("/champs", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
+    const res = await fetch('/champs', {
+      method: 'POST',
+      headers,
       body: JSON.stringify(champ),
     });
 
@@ -95,4 +92,4 @@ const Game = () => {
   );
 };
 
-export default Game;
+export default Game

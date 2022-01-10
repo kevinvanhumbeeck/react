@@ -1,6 +1,8 @@
 {
   "folders": [],
   "settings": {},
-  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "css.customData": [".vscode/css-data.json"]
 }

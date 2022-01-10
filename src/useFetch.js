@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const useFetch = (url) => {
   const [data, setData] = useState(null);
@@ -7,7 +7,7 @@ const useFetch = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading("loading...");
+    setLoading('loading...');
     setData(null);
     setError(null);
     const source = axios.CancelToken.source();
@@ -32,4 +32,4 @@ const useFetch = (url) => {
   return { data, loading, error };
 };
 
-export default useFetch;
+export default useFetch

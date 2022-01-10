@@ -1,5 +1,5 @@
-import AddChamp from "./AddChamp";
-import Champ from "./Champ";
+import AddChamp from './AddChamp'
+import Champ from './Champ'
 
 const Champs = ({ champs, onDelete, onToggle, onAdd }) => {
   return (
@@ -32,4 +32,4 @@ const Champs = ({ champs, onDelete, onToggle, onAdd }) => {
   );
 };
 
-export default Champs;
+export default Champs
