@@ -38,7 +38,7 @@ const Game = () => {
 
     res.status === 200
       ? setChamps(champs.filter((champ) => champ.id !== id))
-      : alert("Error Deleting This Task");
+      : alert("Error Deleting This Champ");
   };
 
   const toggleChamp = async (id) => {
@@ -54,7 +54,7 @@ const Game = () => {
 
     res.status === 200
       ? setChamps(champs.map((champ) => (champ.id === id ? updChamp : champ)))
-      : alert("Error Updating This Task");
+      : alert("Error Updating This Champ");
   };
 
   const addChamp = async (champ) => {
