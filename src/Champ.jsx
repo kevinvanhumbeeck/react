@@ -6,18 +6,16 @@ const Champ = ({ champ, onDelete, onToggle }) => {
       <td className="py-2 px-6 text-center">
         <span
           className={`${
-            champ.flag
-              ? "bg-sky-200  text-sky-600"
-              : "bg-pink-200  text-pink-600"
+            champ.flag ? 'bg-sky-200  text-sky-600' : 'bg-pink-200  text-pink-600'
           } py-1/2 px-2 rounded-full text-xs capitalize`}
         >
-          {champ.flag ? "active" : "idle"}
+          {champ.flag ? 'active' : 'idle'}
         </span>
       </td>
       <td className="py-2 px-6">
         <button
           className={`align-middle cursor-pointer ${
-            !champ.flag && "text-pink-400"
+            !champ.flag && 'text-pink-400'
           } w-4 mr-2 transform hover:text-sky-400 hover:scale-110`}
           onClick={() => onToggle(champ.id)}
         >
@@ -76,7 +74,7 @@ const Champ = ({ champ, onDelete, onToggle }) => {
         </button>
       </td>
     </tr>
-  );
-};
+  )
+}
 
 export default Champ

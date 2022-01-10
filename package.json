@@ -19,9 +19,18 @@
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 5000",
     "dev": "concurrently \"npm start\" \"npm run server\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --fix"
+    "lint": "eslint \"src/**/*.{js,jsx}\" --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "proxy": "http://localhost:5000",
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2,
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "jsxBracketSameLine": true
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -29,7 +38,8 @@
       "eslint:recommended",
       "plugin:import/errors",
       "plugin:react/recommended",
-      "plugin:jsx-a11y/recommended"
+      "plugin:jsx-a11y/recommended",
+      "plugin:prettier/recommended"
     ],
     "plugins": [
       "react",
@@ -58,7 +68,7 @@
       "react/react-in-jsx-scope": "off",
       "quotes": [
         "error",
-        "prefer-single"
+        "single"
       ],
       "jsx-quotes": [
         "error",
@@ -68,7 +78,10 @@
         "error",
         2
       ],
-      "semi": 0
+      "semi": [
+        "error",
+        "never"
+      ]
     },
     "parserOptions": {
       "ecmaVersion": 2021,

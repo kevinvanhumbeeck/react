@@ -1,24 +1,24 @@
 import { useState } from 'react'
 
 const AddChamp = ({ onAdd }) => {
-  const [name, setName] = useState('');
-  const [type, setType] = useState('');
-  const [flag, setFlag] = useState(false);
+  const [name, setName] = useState('')
+  const [type, setType] = useState('')
+  const [flag, setFlag] = useState(false)
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!name) {
-      alert('Please add a task');
-      return;
+      alert('Please add a task')
+      return
     }
 
-    onAdd({ name, type, flag });
+    onAdd({ name, type, flag })
 
-    setName('');
-    setType('');
-    setFlag(false);
-  };
+    setName('')
+    setType('')
+    setFlag(false)
+  }
 
   return (
     <form onSubmit={onSubmit}>
@@ -45,7 +45,7 @@ const AddChamp = ({ onAdd }) => {
 
       <input type="submit" value="Save Champ" className="btn btn-block" />
     </form>
-  );
-};
+  )
+}
 
 export default AddChamp

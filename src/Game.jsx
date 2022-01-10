@@ -4,69 +4,69 @@ import Quote from './Quote'
 import Champs from './Champs'
 
 const Game = () => {
-  const [champs, setChamps] = useState([]);
-  const headers = { 'Content-type': 'application/json' };
+  const [champs, setChamps] = useState([])
+  const headers = { 'Content-type': 'application/json' }
 
   useEffect(() => {
     const getChamps = async () => {
-      const champsFromServer = await fetchChamps();
-      setChamps(champsFromServer);
-    };
-
-    getChamps();
-  }, []);
-
-  const fetchChamps = async (ids = []) => {
-    const path = '/champs';
-    let url = path;
-
-    if (ids.length === 1) {
-      url = `${path}/${ids[0]}`;
-    } else if (ids.length > 1) {
-      url = `${path}?id=${ids.join('&id=')}`;
+      const champsFromServer = await fetchChamps()
+      setChamps(champsFromServer)
     }
 
-    const res = await fetch(url);
-    const data = await res.json();
+    getChamps()
+  }, [])
 
-    return data;
-  };
+  const fetchChamps = async (ids = []) => {
+    const path = '/champs'
+    let url = path
+
+    if (ids.length === 1) {
+      url = `${path}/${ids[0]}`
+    } else if (ids.length > 1) {
+      url = `${path}?id=${ids.join('&id=')}`
+    }
+
+    const res = await fetch(url)
+    const data = await res.json()
+
+    return data
+  }
 
   const deleteChamp = async (id) => {
     const res = await fetch(`/champs/${id}`, {
-      method: 'DELETE',
-    });
+      method: 'DELETE'
+    })
 
     res.status === 200
       ? setChamps(champs.filter((champ) => champ.id !== id))
-      : alert('Error Deleting This Champ');
-  };
+      : alert('Error Deleting This Champ')
+  }
 
   const toggleChamp = async (id) => {
-    const champ = await fetchChamps([id]);
-    const updChamp = { ...champ, flag: !champ.flag };
+    const champ = await fetchChamps([id])
+    const updChamp = { ...champ, flag: !champ.flag }
     const res = await fetch(`/champs/${id}`, {
       method: 'PUT',
       headers,
-      body: JSON.stringify(updChamp),
-    });
+      body: JSON.stringify(updChamp)
+    })
 
     res.status === 200
       ? setChamps(champs.map((champ) => (champ.id === id ? updChamp : champ)))
-      : alert('Error Updating This Champ');
-  };
+      : alert('Error Updating This Champ')
+  }
 
   const addChamp = async (champ) => {
     const res = await fetch('/champs', {
       method: 'POST',
       headers,
-      body: JSON.stringify(champ),
-    });
+      body: JSON.stringify(champ)
+    })
 
-    const data = await res.json();
+    const data = await res.json()
 
-    setChamps([...champs, data]);
-  };
+    setChamps([...champs, data])
+  }
 
   return (
     <div className="w-screen min-h-screen antialiased font-Rajdhani text-gray-400 bg-gray-900 bg-graddy bg-no-repeat bg-right-top bg-[length:1440px_616px]">
@@ -89,7 +89,7 @@ const Game = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Game

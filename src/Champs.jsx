@@ -8,8 +8,8 @@ const Champs = ({ champs, onDelete, onToggle, onAdd }) => {
         <thead>
           <tr className="border-b border-gray-400/10 text-sky-400">
             <th className="sticky py-2 px-6 text-left">
-              {champs.length > 0 ? champs.length : "No"} Champion
-              {champs.length !== 1 ? "s" : ""}
+              {champs.length > 0 ? champs.length : 'No'} Champion
+              {champs.length !== 1 ? 's' : ''}
             </th>
             <th className="sticky py-2 px-6 text-left">Type</th>
             <th className="sticky py-2 px-6 text-center">Status</th>
@@ -18,18 +18,13 @@ const Champs = ({ champs, onDelete, onToggle, onAdd }) => {
         </thead>
         <tbody className="text-gray-300 font-medium">
           {champs.map((champ) => (
-            <Champ
-              key={champ.id}
-              champ={champ}
-              onDelete={onDelete}
-              onToggle={onToggle}
-            />
+            <Champ key={champ.id} champ={champ} onDelete={onDelete} onToggle={onToggle} />
           ))}
         </tbody>
       </table>
       <AddChamp onAdd={onAdd} />
     </>
-  );
-};
+  )
+}
 
 export default Champs

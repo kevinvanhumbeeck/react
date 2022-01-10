@@ -8,37 +8,32 @@ const O = <img src={logoO} alt="O" width="24" height="24" />
 
 class Board extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       squares: Array(9).fill(null),
-      xIsNext: true,
-    };
+      xIsNext: true
+    }
   }
 
   renderSquare(i) {
-    return (
-      <Square
-        value={this.state.squares[i]}
-        onClick={() => this.handleClick(i)}
-      />
-    );
+    return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)} />
   }
 
   handleClick(i) {
-    const squares = this.state.squares.slice();
-    squares[i] = this.state.xIsNext ? X : O;
+    const squares = this.state.squares.slice()
+    squares[i] = this.state.xIsNext ? X : O
     this.setState({
       squares: squares,
-      xIsNext: !this.state.xIsNext,
-    });
+      xIsNext: !this.state.xIsNext
+    })
   }
 
   reClick() {
-    document.getElementById('Layer_2_1_').setAttribute('fill', 'red');
+    document.getElementById('Layer_2_1_').setAttribute('fill', 'red')
   }
 
   render() {
-    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O')
 
     return (
       <div>
@@ -68,7 +63,7 @@ class Board extends React.Component {
           {this.renderSquare(15)}
         </div>
       </div>
-    );
+    )
   }
 }
 

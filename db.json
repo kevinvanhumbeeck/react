@@ -97,12 +97,6 @@
       "type": "Attack",
       "flag": true,
       "id": 6
-    },
-    {
-      "name": "Benne",
-      "type": "Zot",
-      "flag": true,
-      "id": 7
     }
   ]
 }
