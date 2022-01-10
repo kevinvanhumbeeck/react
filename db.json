@@ -86,22 +86,10 @@
       "flag": true
     },
     {
-      "name": "Kevin",
-      "type": "Defense",
-      "flag": true,
-      "id": 4
-    },
-    {
       "name": "Jasmien",
       "type": "Support",
       "flag": true,
       "id": 5
-    },
-    {
-      "name": "Dreirrie",
-      "type": "HP",
-      "flag": true,
-      "id": 6
     }
   ]
 }

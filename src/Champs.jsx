@@ -2,22 +2,21 @@ import AddChamp from "./AddChamp";
 import Champ from "./Champ";
 
 const Champs = ({ champs, onDelete, onToggle, onAdd }) => {
-  const count = champs.length;
   return (
     <>
-      <div>
-        {count > 0 ? count : "No"} Champion{count !== 1 ? "s" : ""}
-      </div>
-      <table className="table-auto">
+      <table className="border-collapse">
         <thead>
-          <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-            <th className="py-3 px-6 text-left">Champion</th>
-            <th className="py-3 px-6 text-left">Type</th>
-            <th className="py-3 px-6 text-center">Status</th>
-            <th className="py-3 px-6 text-center">Actions</th>
+          <tr className="border-b border-gray-400/10 text-gray-300">
+            <th className="sticky py-3 px-6 text-left">
+              {champs.length > 0 ? champs.length : "No"} Champion
+              {champs.length !== 1 ? "s" : ""}
+            </th>
+            <th className="sticky py-3 px-6 text-left">Type</th>
+            <th className="sticky py-3 px-6 text-center">Status</th>
+            <th className="sticky py-3 px-6 text-center">Actions</th>
           </tr>
         </thead>
-        <tbody className="text-gray-600 text-sm font-light">
+        <tbody className="text-gray-400 font-light">
           {champs.map((champ) => (
             <Champ
               key={champ.id}

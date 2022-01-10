@@ -9,7 +9,7 @@ const Quote = () => {
   } = useFetch("https://api.quotable.io/random");
 
   return (
-    <div className="Quote">
+    <div className="italic my-8">
       {loading && <p>{loading}</p>}
       {quote && <p>{quote}</p>}
       {error && <p>{error}</p>}

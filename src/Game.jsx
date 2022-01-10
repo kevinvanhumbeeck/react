@@ -72,7 +72,7 @@ const Game = () => {
   };
 
   return (
-    <div className="w-screen min-h-screen bg-zinc-800">
+    <div className="w-screen min-h-screen antialiased text-gray-400 bg-gray-900">
       <div className="flex flex-row w-960">
         <div className="basis-1/4">
           <Board />
