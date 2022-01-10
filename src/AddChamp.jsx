@@ -46,7 +46,13 @@ const AddChamp = ({ onAdd }) => {
         onChange={(e) => setFlag(e.currentTarget.checked)}
       />
 
-      <input type="submit" value="Save Champ" className="" />
+      <button
+        type="submit"
+        value="Save Champ"
+        className="bg-sky-400 hover:bg-teal-400 text-white py-1/2 px-2 rounded"
+      >
+        Save Champ
+      </button>
     </form>
   )
 }

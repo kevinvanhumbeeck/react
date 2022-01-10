@@ -14,7 +14,7 @@ const Champ = ({ champ, onDelete, onToggle }) => {
       </td>
       <td className="py-2 px-6">
         <button
-          className={`align-middle cursor-pointer ${
+          className={`align-middle ${
             !champ.flag && 'text-pink-400'
           } w-4 mr-2 transform hover:text-sky-400 hover:scale-110`}
           onClick={() => onToggle(champ.id)}
@@ -55,7 +55,7 @@ const Champ = ({ champ, onDelete, onToggle }) => {
           </svg>
         </button>
         <button
-          className="align-middle cursor-pointer w-4 mr-2 transform hover:text-sky-400 hover:scale-110"
+          className="align-middle w-4 mr-2 transform hover:text-sky-400 hover:scale-110"
           onClick={() => onDelete(champ.id)}
         >
           <svg

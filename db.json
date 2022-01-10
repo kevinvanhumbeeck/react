@@ -97,6 +97,24 @@
       "type": "Attack",
       "flag": true,
       "id": 6
+    },
+    {
+      "name": "sqd",
+      "type": "sqd",
+      "flag": false,
+      "id": 7
+    },
+    {
+      "name": "qS",
+      "type": "qs",
+      "flag": false,
+      "id": 8
+    },
+    {
+      "name": "sdqsqds",
+      "type": "sqdqsd",
+      "flag": true,
+      "id": 11
     }
   ]
 }
