@@ -15,8 +15,17 @@ const Game = () => {
     getChamps();
   }, []);
 
-  const fetchChamps = async () => {
-    const res = await fetch("/champs");
+  const fetchChamps = async (ids = null) => {
+    const path = "/champs";
+    let url = path;
+
+    if (ids && ids.length === 1) {
+      url = `${path}/${ids[0]}`;
+    } else if (ids && ids.length > 1) {
+      url = `${path}?id=${"&id="}`;
+    }
+
+    const res = await fetch(url);
     const data = await res.json();
 
     return data;
@@ -32,13 +41,20 @@ const Game = () => {
       : alert("Error Deleting This Task");
   };
 
-  const toggleChamp = (id) => {
-    // TODO JSON-SERVER
-    setChamps(
-      champs.map((champ) =>
-        champ.id === id ? { ...champ, flag: !champ.flag } : champ
-      )
-    );
+  const toggleChamp = async (id) => {
+    const champ = await fetchChamps([id]);
+    const updChamp = { ...champ, flag: !champ.flag };
+    const res = await fetch(`/champs/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(updChamp),
+    });
+
+    res.status === 200
+      ? setChamps(champs.map((champ) => (champ.id === id ? updChamp : champ)))
+      : alert("Error Updating This Task");
   };
 
   const addChamp = async (champ) => {

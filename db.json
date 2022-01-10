@@ -99,7 +99,7 @@
     {
       "name": "Dreirrie",
       "type": "HP",
-      "flag": false,
+      "flag": true,
       "id": 6
     }
   ]
