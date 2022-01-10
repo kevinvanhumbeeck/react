@@ -21,8 +21,9 @@ const AddChamp = ({ onAdd }) => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="w-1/3">
       <input
+        className="w-1/4 py-2 px-6 appearance-none bg-transparent border-none text-gray-700 focus:outline-none"
         type="text"
         placeholder="Add Name"
         value={name}
@@ -30,6 +31,7 @@ const AddChamp = ({ onAdd }) => {
       />
 
       <input
+        className="w-1/4 py-2 px-6 appearance-none bg-transparent border-none text-gray-700 focus:outline-none"
         type="text"
         placeholder="Add Type"
         value={type}
@@ -37,13 +39,14 @@ const AddChamp = ({ onAdd }) => {
       />
 
       <input
+        className="w-1/4 py-2 px-6 bg-transparent border-none text-gray-700 focus:outline-none"
         type="checkbox"
         checked={flag}
         value={flag}
         onChange={(e) => setFlag(e.currentTarget.checked)}
       />
 
-      <input type="submit" value="Save Champ" className="btn btn-block" />
+      <input type="submit" value="Save Champ" className="" />
     </form>
   )
 }

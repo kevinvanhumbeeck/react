@@ -4,7 +4,7 @@ import Champ from './Champ'
 const Champs = ({ champs, onDelete, onToggle, onAdd }) => {
   return (
     <>
-      <table className="border-collapse">
+      <table className="border-collapse w-1/3">
         <thead>
           <tr className="border-b border-gray-400/10 text-sky-400">
             <th className="sticky py-2 px-6 text-left">
