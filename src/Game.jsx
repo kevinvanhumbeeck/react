@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Crypto from './Crypto'
 import Quote from './Quote'
 import Champs from './Champs'
+import ReactLogo from './images/ReactLogo'
 
 const Game = () => {
   const [champs, setChamps] = useState([])
@@ -70,7 +71,31 @@ const Game = () => {
 
   return (
     <div className="w-screen min-h-screen antialiased font-Rajdhani text-gray-400 bg-gray-900 bg-graddy bg-no-repeat bg-right-top bg-[length:1440px_616px]">
-      <div className="flex flex-row w-960">
+      <nav className="sticky top-0 bg-black/50 p-4 text-xl">
+        <ul className="flex">
+          <li className="mr-6">
+            <button className="text-gray-200 hover:text-white">
+              <ReactLogo className="w-auto h-8 mx-auto" />
+            </button>
+          </li>
+          <li className="mr-6">
+            <button className="text-gray-200 hover:text-white border-b-2 border-sky-400">
+              Home
+            </button>
+          </li>
+          <li className="mr-6">
+            <button className="text-gray-200 hover:text-white hover:border-b-2 border-sky-400">
+              About
+            </button>
+          </li>
+          <li className="mr-6">
+            <button className="text-gray-200 hover:text-white hover:border-b-2 border-sky-400">
+              Contact
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div className="flex flex-row">
         <div className="basis-1/4">
           <Crypto />
         </div>
