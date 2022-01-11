@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import Board from './Board'
+import Crypto from './Crypto'
 import Quote from './Quote'
 import Champs from './Champs'
 
 const Game = () => {
   const [champs, setChamps] = useState([])
-  const headers = { 'Content-type': 'application/json' }
+  const headers = { 'Content-Type': 'application/json' }
 
   useEffect(() => {
     const getChamps = async () => {
@@ -72,7 +72,7 @@ const Game = () => {
     <div className="w-screen min-h-screen antialiased font-Rajdhani text-gray-400 bg-gray-900 bg-graddy bg-no-repeat bg-right-top bg-[length:1440px_616px]">
       <div className="flex flex-row w-960">
         <div className="basis-1/4">
-          <Board />
+          <Crypto />
         </div>
         <div className="basis-3/4">
           <div>

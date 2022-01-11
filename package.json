@@ -18,9 +18,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 5000",
-    "dev": "concurrently \"npm start\" \"npm run server\"",
+    "dev": "concurrently \"npm start\" \"npm run server\" \"npm run proxy\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --fix",
-    "format": "prettier --write \"src/**/*.{js,jsx}\""
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "proxy": "node ../react2/src/Server.js"
   },
   "proxy": "http://localhost:5000",
   "prettier": {

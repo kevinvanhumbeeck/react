@@ -10,28 +10,53 @@ const Crypto = () => {
     }
 
     getCryptos()
-  })
+  }, [])
 
   const fetchCryptos = async () => {
     const res = await fetch(
-      'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=10&convert=USD',
+      // 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=10&convert=USD',
+      'http://127.0.0.1:3001/',
+      // '/champs',
       {
-        method: 'GET',
+        method: 'GET'
         // mode: "no-cors",
+        /*
         headers: {
           'X-CMC_PRO_API_KEY': 'da79ab26-9d80-4402-82d2-3c70743eeadd'
         }
+        */
       }
     )
 
     const data = await res.json()
 
-    return data
+    return data.data
   }
 
   console.log(cryptos)
 
-  return <div className="italic my-8"></div>
+  return (
+    <div className="italic my-8">
+      <table className="border-collapse w-1/3">
+        <thead>
+          <tr className="border-b border-gray-400/10 text-sky-400">
+            <th className="sticky py-2 px-6 text-left">Currency</th>
+            <th className="sticky py-2 px-6 text-center">Symbol</th>
+            <th className="sticky py-2 px-6 text-center">Total Supply</th>
+          </tr>
+        </thead>
+        <tbody className="text-gray-300 font-medium">
+          {cryptos.map((crypto) => (
+            <tr className="border-b border-gray-400/10" key={crypto.id}>
+              <td className="py-2 px-6 text-left font-medium">{crypto.name}</td>
+              <td className="py-2 px-6 text-left">{crypto.symbol}</td>
+              <td className="py-2 px-6 text-center">{crypto.total_supply}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
 }
 
 export default Crypto

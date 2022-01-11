@@ -6,7 +6,7 @@ const Quote = () => {
   return (
     <div className="italic my-8">
       {loading && <p>{loading}</p>}
-      {quote && <p>{quote}</p>}
+      {quote && <p>&quot;{quote}&quot;</p>}
       {error && <p>{error}</p>}
     </div>
   )
