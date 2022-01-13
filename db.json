@@ -1,9 +1,65 @@
 {
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "author": "jazz"
+    },
+    {
+      "id": 3,
+      "title": "json-server",
+      "author": "kevin"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "new comment",
+      "postId": 2
+    },
+    {
+      "id": 3,
+      "body": "newest comment",
+      "postId": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "movies": [],
+  "types": [
+    {
+      "id": 1,
+      "name": "Attack"
+    },
+    {
+      "id": 2,
+      "name": "Defense"
+    },
+    {
+      "id": 3,
+      "name": "HP"
+    },
+    {
+      "id": 4,
+      "name": "Support"
+    }
+  ],
   "champs": [
     {
       "id": 1,
       "name": "Raglin",
-      "type": "Support",
+      "typeId": 4,
       "faction": "Banner Lords",
       "element": "Void",
       "rarity": "Legendary",
@@ -46,7 +102,7 @@
     {
       "id": 3,
       "name": "Valkyrie",
-      "type": "Support",
+      "typeId": 4,
       "faction": "Banner Lords",
       "element": "Void",
       "rarity": "Legendary",
@@ -88,33 +144,45 @@
     },
     {
       "name": "Jasmien",
-      "type": "Support",
-      "flag": true,
+      "typeId": 4,
+      "flag": false,
       "id": 5
     },
     {
       "name": "Kevin",
-      "type": "Attack",
+      "typeId": 1,
       "flag": true,
       "id": 6
     },
     {
-      "name": "sqd",
-      "type": "sqd",
+      "name": "New",
+      "typeId": 1,
       "flag": false,
       "id": 7
     },
     {
-      "name": "qS",
-      "type": "qs",
-      "flag": false,
+      "name": "Mick",
+      "typeId": 3,
+      "flag": true,
       "id": 8
     },
     {
-      "name": "sdqsqds",
-      "type": "sqdqsd",
+      "name": "Schumacker",
+      "typeId": 3,
+      "flag": true,
+      "id": 9
+    },
+    {
+      "name": "Fred",
+      "typeId": 3,
       "flag": false,
       "id": 11
+    },
+    {
+      "name": "Alice",
+      "typeId": 2,
+      "flag": true,
+      "id": 12
     }
   ]
 }

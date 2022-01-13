@@ -8,7 +8,7 @@ const Champ = ({ champ, onDelete, onToggle }) => {
         />
       </td>
       <td className="py-2 px-2 text-left font-medium">{champ.name}</td>
-      <td className="py-2 px-2 text-left">{champ.type}</td>
+      <td className="py-2 px-2 text-left">{champ.type.name}</td>
       <td className="py-2 px-2 text-center">
         <span
           className={`${

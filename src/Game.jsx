@@ -18,14 +18,17 @@ const Game = () => {
 
   const fetchChamps = async (ids = []) => {
     const path = '/champs'
-    let url = path
+    let params = {}
 
-    if (ids.length === 1) {
-      url = `${path}/${ids[0]}`
-    } else if (ids.length > 1) {
-      url = `${path}?id=${ids.join('&id=')}`
-    }
+    // joining types
+    params['_expand'] = 'type'
 
+    // filtering ids
+    ids.forEach((id) => (params['id'] = id))
+
+    let searchParams = new URLSearchParams(params)
+
+    const url = path + '?' + searchParams.toString()
     const res = await fetch(url)
     const data = await res.json()
 
@@ -43,12 +46,17 @@ const Game = () => {
   }
 
   const toggleChamp = async (id) => {
+    // TODO accept array
     const champ = await fetchChamps([id])
-    const updChamp = { ...champ, flag: !champ.flag }
+    const updChamp = { ...champ[0], flag: !champ[0].flag }
+    // since we use PUT, we need to remove the relation
+    // we don't wan't the reference in the database object
+    const writeUpdChamp = { ...updChamp }
+    delete writeUpdChamp.type
     const res = await fetch(`/champs/${id}`, {
       method: 'PUT',
       headers,
-      body: JSON.stringify(updChamp)
+      body: JSON.stringify(writeUpdChamp)
     })
 
     res.status === 200

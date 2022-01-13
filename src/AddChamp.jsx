@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const AddChamp = ({ onAdd }) => {
   const [name, setName] = useState('')
-  const [type, setType] = useState('')
+  const [typeId, setType] = useState(0)
   const [flag, setFlag] = useState(false)
 
   const onSubmit = (e) => {
@@ -13,10 +13,10 @@ const AddChamp = ({ onAdd }) => {
       return
     }
 
-    onAdd({ name, type, flag })
+    onAdd({ name, typeId, flag })
 
     setName('')
-    setType('')
+    setType(0)
     setFlag(false)
   }
 
@@ -34,8 +34,8 @@ const AddChamp = ({ onAdd }) => {
         className="w-1/4 py-2 px-6 appearance-none bg-transparent border-none text-gray-700 focus:outline-none"
         type="text"
         placeholder="Add Type"
-        value={type}
-        onChange={(e) => setType(e.target.value)}
+        value={typeId}
+        onChange={(e) => setType(parseInt(e.target.value))}
       />
 
       <input
