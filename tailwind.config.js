@@ -1,14 +1,14 @@
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        Rajdhani: ["Rajdhani", "sans-serif"],
+        Rajdhani: ['Rajdhani', 'sans-serif']
       },
       backgroundImage: {
-        graddy: "url('./images/tw.png')",
-      },
-    },
+        graddy: 'url("./images/tw.png")'
+      }
+    }
   },
-  plugins: [],
-};
+  plugins: []
+}

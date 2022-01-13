@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Crypto from './Crypto'
 import Quote from './Quote'
 import Champs from './Champs'
 import ReactLogo from './images/ReactLogo'
@@ -96,9 +95,7 @@ const Game = () => {
         </ul>
       </nav>
       <div className="flex flex-row">
-        <div className="basis-1/4">
-          <Crypto />
-        </div>
+        <div className="basis-1/4">{/* <!-- todo --> */}</div>
         <div className="basis-3/4">
           <div>
             <Quote />

@@ -113,14 +113,8 @@
     {
       "name": "sdqsqds",
       "type": "sqdqsd",
-      "flag": true,
-      "id": 11
-    },
-    {
-      "name": "Kev",
-      "type": "test",
       "flag": false,
-      "id": 12
+      "id": 11
     }
   ]
 }

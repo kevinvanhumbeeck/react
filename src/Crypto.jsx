@@ -1,24 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 const Crypto = () => {
-  const [cryptos, setCryptos] = useState([]);
+  const [cryptos, setCryptos] = useState([])
 
   useEffect(() => {
     const getCryptos = async () => {
-      const cryptosFromServer = await fetchCryptos();
-      setCryptos(cryptosFromServer);
-    };
+      const cryptosFromServer = await fetchCryptos()
+      setCryptos(cryptosFromServer)
+    }
 
-    getCryptos();
-  }, []);
+    getCryptos()
+  }, [])
 
   const fetchCryptos = async () => {
     const res = await fetch(
       // 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=10&convert=USD',
-      "http://127.0.0.1:3001/",
+      'http://127.0.0.1:3001/',
       // '/champs',
       {
-        method: "GET",
+        method: 'GET'
         // mode: "no-cors",
         /*
         headers: {
@@ -26,12 +26,12 @@ const Crypto = () => {
         }
         */
       }
-    );
+    )
 
-    const data = await res.json();
+    const data = await res.json()
 
-    return data.data;
-  };
+    return data.data
+  }
 
   return (
     <div className="italic my-8">
@@ -56,7 +56,7 @@ const Crypto = () => {
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default Crypto;
+export default Crypto
