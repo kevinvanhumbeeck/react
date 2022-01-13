@@ -1,9 +1,15 @@
 const Champ = ({ champ, onDelete, onToggle }) => {
   return (
     <tr className="border-b border-gray-400/10">
-      <td className="py-2 px-6 text-left font-medium">{champ.name}</td>
-      <td className="py-2 px-6 text-left">{champ.type}</td>
-      <td className="py-2 px-6 text-center">
+      <td className="w-min py-2 px-2 text-center">
+        <input
+          className="bg-transparent border-none text-gray-700 focus:outline-none"
+          type="checkbox"
+        />
+      </td>
+      <td className="py-2 px-2 text-left font-medium">{champ.name}</td>
+      <td className="py-2 px-2 text-left">{champ.type}</td>
+      <td className="py-2 px-2 text-center">
         <span
           className={`${
             champ.flag ? 'bg-sky-200  text-sky-600' : 'bg-pink-200  text-pink-600'
@@ -12,7 +18,7 @@ const Champ = ({ champ, onDelete, onToggle }) => {
           {champ.flag ? 'active' : 'idle'}
         </span>
       </td>
-      <td className="py-2 px-6">
+      <td className="py-2 px-2 text-center">
         <button
           className="align-middle w-4 mr-2 transform hover:text-sky-400 hover:scale-110"
           onClick={() => onToggle(champ.id)}
