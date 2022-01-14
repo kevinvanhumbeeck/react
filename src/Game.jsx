@@ -112,7 +112,7 @@ const Game = () => {
       </nav>
       <div className="flex flex-row">
         <div className="basis-1/4">
-          {/* <!-- todo LOG, actions with checkbox, select on types --> */}
+          {/* <!-- todo LOG, actions with checkbox, select on types, undo with previous state --> */}
         </div>
         <div className="basis-3/4">
           <div>
