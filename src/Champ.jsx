@@ -1,4 +1,4 @@
-const Champ = ({ champ, onDelete, onToggle }) => {
+const Champ = ({ champ, type, onDelete, onToggle }) => {
   return (
     <tr className="border-b border-gray-400/10">
       <td className="w-min py-2 px-2 text-center">
@@ -8,7 +8,7 @@ const Champ = ({ champ, onDelete, onToggle }) => {
         />
       </td>
       <td className="py-2 px-2 text-left font-medium">{champ.name}</td>
-      <td className="py-2 px-2 text-left">{champ.type.name}</td>
+      <td className="py-2 px-2 text-left">{type}</td>
       <td className="py-2 px-2 text-center">
         <span
           className={`${

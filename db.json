@@ -167,12 +167,6 @@
       "id": 8
     },
     {
-      "name": "Schumacker",
-      "typeId": 3,
-      "flag": true,
-      "id": 9
-    },
-    {
       "name": "Fred",
       "typeId": 3,
       "flag": false,
@@ -181,7 +175,7 @@
     {
       "name": "Alice",
       "typeId": 2,
-      "flag": true,
+      "flag": false,
       "id": 12
     }
   ]

@@ -5,11 +5,15 @@ import ReactLogo from './images/ReactLogo'
 
 const Game = () => {
   const [champs, setChamps] = useState([])
+  const [types, setTypes] = useState([])
   const headers = { 'Content-Type': 'application/json' }
+  const path = '/champs'
 
   useEffect(() => {
     const getChamps = async () => {
+      const typesFromServer = await fetchTypes()
       const champsFromServer = await fetchChamps()
+      setTypes(typesFromServer)
       setChamps(champsFromServer)
     }
 
@@ -17,26 +21,28 @@ const Game = () => {
   }, [])
 
   const fetchChamps = async (ids = []) => {
-    const path = '/champs'
     let params = {}
 
-    // joining types
-    params['_expand'] = 'type'
-
-    // filtering ids
     ids.forEach((id) => (params['id'] = id))
+    const searchParams = new URLSearchParams(params)
+    const qs = searchParams.toString()
+    const url = qs ? `${path}?${qs}` : path
 
-    let searchParams = new URLSearchParams(params)
-
-    const url = path + '?' + searchParams.toString()
     const res = await fetch(url)
     const data = await res.json()
 
     return data
   }
 
+  const fetchTypes = async () => {
+    const res = await fetch('/types')
+    const data = await res.json()
+
+    return data
+  }
+
   const deleteChamp = async (id) => {
-    const res = await fetch(`/champs/${id}`, {
+    const res = await fetch(`${path}/${id}`, {
       method: 'DELETE'
     })
 
@@ -49,14 +55,10 @@ const Game = () => {
     // TODO accept array
     const champ = await fetchChamps([id])
     const updChamp = { ...champ[0], flag: !champ[0].flag }
-    // since we use PUT, we need to remove the relation
-    // we don't wan't the reference in the database object
-    const writeUpdChamp = { ...updChamp }
-    delete writeUpdChamp.type
-    const res = await fetch(`/champs/${id}`, {
+    const res = await fetch(`${path}/${id}`, {
       method: 'PUT',
       headers,
-      body: JSON.stringify(writeUpdChamp)
+      body: JSON.stringify(updChamp)
     })
 
     res.status === 200
@@ -65,7 +67,7 @@ const Game = () => {
   }
 
   const addChamp = async (champ) => {
-    const res = await fetch('/champs', {
+    const res = await fetch(path, {
       method: 'POST',
       headers,
       body: JSON.stringify(champ)
@@ -74,6 +76,12 @@ const Game = () => {
     const data = await res.json()
 
     setChamps([...champs, data])
+  }
+
+  const getRelation = (table, index, prop) => {
+    const type = table.find(({ id }) => id === index) || {}
+
+    return type[prop] || 'Unknown'
   }
 
   return (
@@ -103,7 +111,9 @@ const Game = () => {
         </ul>
       </nav>
       <div className="flex flex-row">
-        <div className="basis-1/4">{/* <!-- todo --> */}</div>
+        <div className="basis-1/4">
+          {/* <!-- todo LOG, actions with checkbox, select on types --> */}
+        </div>
         <div className="basis-3/4">
           <div>
             <Quote />
@@ -111,6 +121,8 @@ const Game = () => {
           <div>
             <Champs
               champs={champs}
+              types={types}
+              relation={getRelation}
               onDelete={deleteChamp}
               onToggle={toggleChamp}
               onAdd={addChamp}

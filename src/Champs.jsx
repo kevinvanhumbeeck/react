@@ -1,7 +1,7 @@
 import AddChamp from './AddChamp'
 import Champ from './Champ'
 
-const Champs = ({ champs, onDelete, onToggle, onAdd }) => {
+const Champs = ({ champs, types, relation, onDelete, onToggle, onAdd }) => {
   return (
     <>
       <table className="w-1/2">
@@ -24,7 +24,13 @@ const Champs = ({ champs, onDelete, onToggle, onAdd }) => {
         </thead>
         <tbody className="text-gray-300 font-medium">
           {champs.map((champ) => (
-            <Champ key={champ.id} champ={champ} onDelete={onDelete} onToggle={onToggle} />
+            <Champ
+              key={champ.id}
+              champ={champ}
+              type={relation(types, champ.typeId, 'name')}
+              onDelete={onDelete}
+              onToggle={onToggle}
+            />
           ))}
         </tbody>
       </table>
